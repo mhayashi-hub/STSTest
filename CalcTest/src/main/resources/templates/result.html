@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Result</title>
+<meta http-equiv="Content-type" content="text/html;charaset=utf-8"/>
+</head>
+<body>
+<H1>Result</H1>
+<p th:text="'Answer: ' + ${form.getTotal()}"/>
+<a href="/calc">Calculate Another: number</a>
+</body>
+</html>
