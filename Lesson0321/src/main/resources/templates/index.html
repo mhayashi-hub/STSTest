@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Lesson032-派生1</title>
+</head>
+
+<body>
+	<form th:action="@{/search}" th:object=${form} method="post">
+		<table border="0" align="center">
+			<tr>
+				<td align="right">社員番号：</td>
+				<td><input type="text" name="shainNo" th:value="*{shainNo}" /></td>
+				<td align="right"><button type="submit">検索</button></td>
+			</tr>
+		</table>
+		<hr <tr>
+		<div th:if="*{shainNameKanji != null}">
+			<table border="1" align="center">
+				<tr>
+					<td align="left" width="150" th:text="*{shainNameKanji}" </td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>
