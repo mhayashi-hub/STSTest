@@ -25,6 +25,13 @@ public class TestController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(@ModelAttribute("form") TestForm form, Model model) {
+		
+		form.putToShainListMap(001, "鈴木イチロー");
+		form.putToShainListMap(002, "田中将大");
+		form.putToShainListMap(003, "高橋雄介");
+		form.putToShainListMap(004, "鈴木亮一");
+		form.putToShainListMap(014, "橋本省吾");
+
 		return "index";
 	}
 
@@ -39,6 +46,14 @@ public class TestController {
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public String search(@ModelAttribute("form") TestForm form, Model model) {
 		service.setShainInfo(form);
+		
+		if (form.getShainListMap().containsKey(form.getShainNo())) {
+			form.getShainNameKanji(form.getShainNo());
+		} else {
+			form.putToShainListMap(000, "該当する社員はいません");
+			form.getShainNameKanji(000);
+		}
+		
 		model.addAttribute("form", form);
 		return "index";
 	}

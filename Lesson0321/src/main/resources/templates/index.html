@@ -15,11 +15,14 @@
 				<td align="right"><button type="submit">検索</button></td>
 			</tr>
 		</table>
-		<hr <tr>
+		<hr>
 		<div th:if="*{shainNameKanji != null}">
 			<table border="1" align="center">
 				<tr>
-					<td align="left" width="150" th:text="*{shainNameKanji}" </td>
+					<td align="center" width="150" bgcolor="#c0ffc0">社員名</td>
+				</tr>
+				<tr>
+					<td align="left" width="150" th:text="*{shainNameKanji}"></td>
 				</tr>
 			</table>
 		</div>

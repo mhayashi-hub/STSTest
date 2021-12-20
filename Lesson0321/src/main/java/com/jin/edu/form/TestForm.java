@@ -11,8 +11,6 @@ public class TestForm {
 //	member name Kanji
 	private String shainNameKanji;
 
-	Map<Integer, String> shainListMap = new HashMap<>();
-
 	/**
 	 * member info numberの取得
 	 * 
@@ -36,21 +34,25 @@ public class TestForm {
 	 * 
 	 * @return member Name Kanji shainNameKanji
 	 */
+	
+	Map<Integer, String> shainListMap = new HashMap<>();
+	public Map<Integer, String> getShainListMap() {
+		return shainListMap;
+	}
+	public void putToShainListMap(Integer shainNo, String shainNameKanji) {
+		shainListMap.put(shainNo, shainNameKanji);
+	}
+
 	/*
 	public String getShainNameKanji() {
 		return shainNameKanji;
 	}
 	*/
-	public String getShainNameKanji() {
+	public String getShainNameKanji(Integer shainNo) {
 		return shainListMap.get(shainNo);
 	}
 
-	/**
-	 * member Name Kanjiの設定
-	 * 
-	 * @param shainNameKanji
-	 */
 	public void setShainNameKanji(String shainNameKanji) {
 		this.shainNameKanji = shainNameKanji;
-	}
+	}	
 }
