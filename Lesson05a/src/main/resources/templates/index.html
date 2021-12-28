@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="https://wwww.thymeleaf.org">
+<header>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>spring MVC sample</title>
+</header>
+
+<body>
+	<h1>部署名検索システム</h1>
+	<form th:action="@{/search}" th:object="${form}" method="post">
+		<!-- 検索フォーム定型、初期画面 -->
+		<table border="0" align="center">
+			<tr>
+				<td align="right">部署コード番号：</td>
+				<td><input type="text" name="bushoCd" th:value="*{bushoCd}" /></td>
+				<td align="right"><button type="submit" name="search">検索</button></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<hr>
+		<!-- 検索結果表示部 /searchの画面 -->
+		<div th:if="*{bushoInfo != null}">
+			<table border="0" align="center">
+				<td>
+					<table border="0" align="left">
+						<td align="right">[検索結果]</td>
+					</table>
+				</td>
+				<tr>
+					<td>
+						<table border="1" align="left">
+							<td align="center" width="10" bgcolor="#c0ffc0">No</td>
+							<td align="center" width="140" bgcolor="#c0ffc0">部署コード番号</td>
+							<td align="center" width="150" bgcolor="#c0ffc0">部署名</td>
+							<tr>
+								<td align="right" width="10" th:text="1"></td>
+								<td align="center" width="140" th:text="*{bushoInfo.bushoCd}"></td>
+								<td align="left" width="150" th:text="*{bushoInfo.bushoName}"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>
