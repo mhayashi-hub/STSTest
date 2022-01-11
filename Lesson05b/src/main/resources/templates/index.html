@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<header>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>spring MVC sample2</title>
+</header>
+
+<body>
+	<h1>社員情報検索システム</h1>
+	<form th:action="@{/search}" th:object="${form}" method="post">
+	<!-- 検索フォーム定型、初期画面 -->
+		<table border="0" align="center">
+			<tr>
+				<td align="right">社員番号：</td>
+				<td><input type="text" name="shainNo" th:value="*{shainNo}" /></td>
+				<td align="right"><button type="submit" name="search">検索</button></td>
+				<td>&nbso</td>
+			</tr>
+		</table>
+		<hr>
+	<!-- 検索結果表示部 /searchの結果出力画面 -->
+		<div th:if="*{mergeInfo != null}">
+			<table border="0" align="center">
+				<td>
+					<table border="0" align="left">
+						<td align="right">[検索結果]</td>
+					</table>
+				</td>
+				<tr>
+					<td>
+						<table border="1" align="left">
+							<td align="center" width="80" bgcolor="#c0fffc0">社員No</td>
+							<td align="center" width="140" bgcolor="#c0ffc0">社員名</td>
+							<td align="center" width="150" bgcolor="#c0ffc0">部署名</td>
+							<tr>
+								<td align="right" width="80" th:text="*{mergeInfo.shainNo}"></td>
+								<td align="center" wdth="140" th:text="*{mergeInfo.shainNameKj}"></td>
+								<td algin="left" width="150" th:text="*{mergeInfo.bushoName}"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>

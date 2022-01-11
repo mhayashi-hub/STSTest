@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//maybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jin.edu.mapper.MergeInfoDaoMapper">
+	<select id="select" parameterType="String" resultType="com.jin.edu.dto.MergeInfoDto">
+		SELECT
+			SHAIN_NO,
+			SHAIN_NAME_KJ,
+			BUSHO_INFO.BUSHO_NAME
+		FROM
+			SHAIN_INFO
+		INNER JOIN
+			BUSHO_INFO
+		ON
+			SHAIN_INFO.BUSHO_CD = BUSHO_INFO.BUSHO_CD
+		WHERE
+			SHAIN_INFO.SHAIN_NO = #{shainNo}
+	</select>
+</mapper>
