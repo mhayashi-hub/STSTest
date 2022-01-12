@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <header>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>spring MVC sample2</title>
@@ -14,7 +14,7 @@
 				<td align="right">社員番号：</td>
 				<td><input type="text" name="shainNo" th:value="*{shainNo}" /></td>
 				<td align="right"><button type="submit" name="search">検索</button></td>
-				<td>&nbso</td>
+				<td>&nbsp;</td>
 			</tr>
 		</table>
 		<hr>
@@ -29,13 +29,13 @@
 				<tr>
 					<td>
 						<table border="1" align="left">
-							<td align="center" width="80" bgcolor="#c0fffc0">社員No</td>
+							<td align="center" width="80" bgcolor="#c0fffc">社員No</td>
 							<td align="center" width="140" bgcolor="#c0ffc0">社員名</td>
-							<td align="center" width="150" bgcolor="#c0ffc0">部署名</td>
+							<td align="center" width="120" bgcolor="#c0ffc0">部署名</td>
 							<tr>
-								<td align="right" width="80" th:text="*{mergeInfo.shainNo}"></td>
-								<td align="center" wdth="140" th:text="*{mergeInfo.shainNameKj}"></td>
-								<td algin="left" width="150" th:text="*{mergeInfo.bushoName}"></td>
+								<td align="center" width="80" th:text="*{mergeInfo.shainNo}"></td>
+								<td align="center" width="140" th:text="*{mergeInfo.shainNameKj}"></td>
+								<td align="center" width="120" th:text="*{mergeInfo.bushoName}"></td>
 							</tr>
 						</table>
 					</td>
